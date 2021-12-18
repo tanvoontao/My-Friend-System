@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+    word-break: break-word; 
+    transition: all 0.2s ease-in-out;
+}
+
+
+
+
+:root{
+    /*
+        6 - bg, color of words
+        3 - small part of bg
+        1 - btn, important txt
+    */
+    --dark_purple: #7e3ed1; /* 6 */
+    --purple: #e0c7ff;      /* 3 */ 
+    --white: #e5e5e5;       /* 6 */
+    --dark_red: #a40000;    /* 3 */ 
+    --red: #fe0005;         /* 1 */
+
+    --heading_1: 40px;
+    --heading_2: 30px;
+    --words: 16px;
+
+    --border-radius: 10px;
+}
+body{
+    background-color: var(--white);
+}
+hr{
+    width: 100%;
+    border: 1px solid var(--dark_purple);
+    background-color: var(--dark_purple);
+}
+
+.small_txt{
+    font-weight: 400;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.error{
+    color: var(--red);
+}
+
+
+h1{
+    color: var(--dark_purple);
+    font-size: var(--heading_1);
+    font-weight: 900;
+}
+
+h2{
+    color: var(--dark_purple);
+    font-size: var(--heading_2);
+    font-weight: 600;
+}
+
+h3{
+    color: var(--dark_purple);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* Home page: index.php */
+/* Chat styling: Name, Std Id, declaration statement */
+.chat_area{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.purple_txt{
+    color: var(--white);
+}
+.purple_txt a{
+    text-decoration: none;
+    color: var(--white);
+}
+.purple_txt a:hover{
+    color: var(--dark_red);
+}
+
+.chat_box p{
+    font-size: var(--words);
+    color: var(--purple);
+    font-weight: 400;
+}
+
+.profile{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: zoomOut 1s ease-in-out;
+}
+
+@keyframes zoomOut{
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.chat_box{
+    background-color: var(--dark_purple);
+    width: 100%;
+    border-radius: 25px;
+    animation: slideIn 1s ease-in-out;
+}
+
+
+@keyframes slideIn{
+    from{
+        opacity: 0;
+        transform: scale(0);
+        transform: translateX(-10%);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+        transform: translateX(0);
+    }
+}
+
+.chat_box.left{border-bottom-left-radius: 2px;}
+.chat_box.right{border-bottom-right-radius: 2px;}
+
+.big_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.big_container>div:nth-child(1){
+    width: 65%;
+}
+.big_container>div:nth-child(2){
+    width: 35%;
+}
+
+
+
+.box, .signUp_form{
+    border-radius: var(--border-radius);
+    background-color: var(--purple);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 100%;
+}
+
+
+.btns{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.link_button, .form_btn button{
+    width: 90px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--dark_purple);
+    border: none;
+    
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    color: var(--white);
+    text-decoration: none;
+}
+.form_btn button:nth-child(1){
+    background-color: var(--white);
+    color: var(--dark_purple);
+}
+.link_button:hover, .form_btn button:hover{
+    opacity: 0.8;
+    color: var(--white);
+    font-weight: 900;
+    
+    text-decoration: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 12px 49px 12px;
+    transform: scale(1.1);
+}
+.form_btn button:nth-child(1):hover{
+    color: var(--dark_purple);
+}
+
+@media (max-width: 900px){
+    .big_container{
+        flex-direction: column;
+        height: auto;
+    }
+    .big_container>div:nth-child(1){
+        width: 100%;
+    }
+    .big_container>div:nth-child(2){
+        width: 100%;
+    }
+}
+
+
+
+
+input[type=text], input[type=password], input[type=email], select, textarea {
+    width: 100%;
+    border: 1px solid var(--dark_purple);
+    border-radius: 5px;
+    resize: none;
+    transition: all 0.2 ease-in-out;
+    background-color: var(--white);
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus{
+    border: 3px solid var(--dark_purple);
+    color:var(--dark_purple);
+}
+
+.form_btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+
+/*sign up page*/
+.register_img{
+    background-color: var(--dark_purple);
+    border-radius: var(--border-radius);
+    width: 50%;
+}
+
+
+.error_bx{
+    text-align: center;
+}
+
+
+.error_bx p{
+    text-align: left;
+}
+
+
+
+
+
+/* ---------- upload profile area and input ---------- */
+.upload_profile_area{
+    padding: 5px;
+    border: 2px dashed var(--dark_purple);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    height: 90%;
+    width: 100%;
+    
+}
+
+
+.upload_profile_area .icon{
+    font-size: 30px;
+    color: var(--dark_purple);
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.upload_profile_area p{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark_purple);
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.upload_profile_area:hover{
+    border: 3px dashed var(--dark_purple);
+    cursor: pointer;
+}
+.upload_profile_area:hover .icon,
+.upload_profile_area:hover p{
+    color: var(--dark_purple);
+    font-weight: 800;
+}
+
+
+.upload_profile_area img{
+    width: 100%;
+    height: 117px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.upload_profile_area.active{
+    border: 2px solid var(--orange);
+}
+
+.image_input{
+    display: none;
+}
+
+
+
+
+/* friendlist.php */
+.profile_box{
+    background-color: var(--purple);
+    border-radius: var(--border-radius);
+}
+
+.profile_container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.profile_container img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: zoomOut 1s ease-in-out;
+}
+
+.profile_container p{
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    color: var(--dark_purple);
+    font-weight: 900;
+    margin-left: 30px;
+    line-height: 0.8;
+
+}
+
+.profile_container p span{
+    font-size: 16px;
+    color: var(--dark_purple);
+    opacity: 0.6;
+    font-weight: 500;
+
+}
+
+.profile_container .add_friend_link a{
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--dark_purple);
+    margin-left: 40px;
+}
+
+.profile_container .add_friend_link:hover a{
+    text-decoration: none;
+    color: var(--dark_red);
+
+}
+
+.logout_btn i{
+    color: var(--dark_purple);
+    font-weight: 900;
+    font-size: 40px;
+}
+.logout_btn:hover a i{
+    color: var(--dark_red);
+}
+
+.friend_box{
+    border: 2px solid var(--dark_purple);
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.friend_box img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+
+.friend_box p{
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    color: var(--dark_purple);
+    font-weight: 700;
+    line-height: 0.8;
+    margin: 0 10px;
+}
+
+.friend_box p span{
+    font-size: 16px;
+    color: var(--dark_purple);
+    opacity: 0.6;
+    font-weight: 500;
+}
+
+.unfriend_btn .link_button{
+    background-color: var(--dark_red);
+}
+
+.unfriend_btn .link_button i{
+    margin: 3px 0;
+}
+
+
+
+@media (max-width: 400px){
+    .friend_box img{
+        width: 50px;
+        height: 50px;
+    }
+    .friend_box p{
+        font-size: 18px;
+    }
+    .friend_box p span{
+        font-size: 14px;
+    }
+    
+}
+
+.login_img{
+    border-radius: var(--border-radius);
+    width: 25%;
+    text-align: center;
+}
+
+.login_page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 400px){
+
+    .login_img{
+        width: 70%;
+    }
+}
+
+.add_friend_btn a{
+    width: 100px;
+}
+
+@media (max-width: 600px){
+
+    .profile_container{
+        flex-direction: column;
+    }
+    .profile_container .add_friend_link a{
+        font-size: 15px;
+        margin: 0;
+    }
+    .profile_container p{
+        margin: 0;
+    }
+
+}
+
+
+
+/* Pagination */
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pagination a{
+    border: 1px solid var(--dark_purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius);
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--dark_purple);
+}
+
+
+.pagination a:hover{
+    background-color: var(--dark_purple);
+    color: var(--white);
+}
+
+.pagination a.active{
+    background-color: var(--dark_purple);
+    color: var(--white);
+}
+
+table tr td,
+table tr th{
+    word-break: normal;
+    color: var(--white);
+}
+
+
+
+
+.dark_red{
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.dark_red.strong{
+    font-size: 16px;
+    font-weight: 500;
+}
+.dark_red.big{
+    font-size: 22px;
+    font-size: 700;
+}
+
+.dark_red.midle{
+    font-size: 20px;
+    font-size: 700;
+    color: var(--dark_red);
+}
+
+.purple_bg{
+    background-color: var(--dark_purple);
+    border-radius: var(--border-radius);
+}
+
+.orange_word{
+    color: var(--dark_red);
+}
